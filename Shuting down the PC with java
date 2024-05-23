@@ -1,0 +1,18 @@
+import java.util.Scanner;
+import java.io.*;
+
+public class Codecracker {
+    public static void main(String[]args){
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter the number of seconds:");
+        int seconds = scan.nextInt();
+        Runtime r =Runtime.getRuntime();
+        try {
+            System.out.println("Shutdown the pc after" + seconds + " seconds.");
+            r.exec("Shutdown -s -t " + seconds);
+        }
+         catch(IOException e)   {
+            System.out.println("Exception:" +e);
+        }
+    }
+}
